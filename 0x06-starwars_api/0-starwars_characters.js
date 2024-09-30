@@ -4,7 +4,7 @@ const request = require('request');
 const movieId = process.argv[2];
 const baseUrl = 'https://swapi-api.alx-tools.com/api/';
 
-request.get(`&{baseUrl} films/ &{movieId}`,{json: true}, (err,res,body) =>{
+request.get(`${baseUrl} films/ ${movieId}`,{json: true}, (err,res,body) =>{
 	if(err) {return console.log(err);}
 	const result = body.characters
 
