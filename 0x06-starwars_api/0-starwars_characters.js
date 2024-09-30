@@ -1,14 +1,16 @@
 #!/usr/bin/node
-
 const request = require('request');
+
 const movieId = process.argv[2];
-const baseUrl = 'https://swapi-api.alx-tools.com/api/';
 
-request.get(`${baseUrl} films/ ${movieId}`,{json: true}, (err,res,body) =>{
-	if(err) {return console.log(err);}
-	const result = body.characters
+const baseUrl = 'https://swapi-api.hbtn.io/api/';
 
-	actorsList(result)
+request.get(`${baseUrl}films/${movieId}`, { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  const result = body.characters;
+  // console.log(result);
+
+  actorsList(result);
 });
 
 function actorsList (result, i = 0) {
